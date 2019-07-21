@@ -16,7 +16,7 @@
             .required {
                 margin:10px;
             }
-            #message {
+            .message {
                 height:40px;
                 font-size: 20px;
                 box-sizing: content-box;
@@ -28,15 +28,29 @@
             div.partners {
                 padding-bottom:150px !important;
             }
+        
         @media only screen and (max-width: 768px){
         .script-container {
             height:500px !important;
-        }}
+            width:100% !important;
+        }
+        .message {
+            position: relative !important;
+        }
+ 
+    }
 
         @media only screen and (min-width: 992px){
             .script-container {
                 margin-top:0px !important;
-            }}
+            } 
+            .message {
+                height:40px !important;
+                font-size: 20px !important;
+                box-sizing: content-box !important;
+            }
+        }
+
                 </style>
     <!--Semantic UI start-->
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
@@ -347,7 +361,7 @@
         });
 
         </script><br>
-        <div class="ui green massive message" id="message" style="visibility:hidden; position:absolute;">Thank you very much, you are being redirected to the investors area.</div>
+        <div class="ui green message" id="message" style="visibility:hidden; position:absolute;">Thank you very much, you are being redirected to the investors area.</div>
  </div>
 
 

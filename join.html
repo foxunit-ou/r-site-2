@@ -262,11 +262,6 @@
         "class": "label",
         "style": "padding-left: 5px"
     },
-    "message":{
-        "class":"message",
-        "id":"message", 
-        "style":"position:absolute;"
-    },
     "loader": {
         "type": "img",
         "src": "//www.newsletter2go.com/images/loader.svg",
@@ -335,7 +330,7 @@
         n2g('subscribe:createForm', config, 0, 
         function(response, messages){
             if(response.status ==200 || response.status ==201){
-                document.getElementById("message").style = "visibility: visible";
+                document.getElementById("message").style = "visibility: visible;position:absolute;";
                 setTimeout(window.location.replace("https://rise.dashboard.securitize.io/registration"),10000);
             }
         }, 
@@ -349,12 +344,10 @@
         });
         $(document).ready(function(){
             $("input").addClass("noShow");
-            
-          
         });
 
         </script><br>
-        <div class="ui green massive message" id="message" style="visibility:hidden; position: absolute;">Thank you very much, you are being redirected to the investors area.</div>
+        <div class="ui green massive message" id="message" style="visibility:hidden; position:absolute;">Thank you very much, you are being redirected to the investors area.</div>
  </div>
 
 

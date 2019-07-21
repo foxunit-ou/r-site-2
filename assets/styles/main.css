@@ -3015,6 +3015,7 @@ p.text {
   #page-form-html #page-form .main-container .partners .logos-container {
     margin: 55px 0 0;
     max-width: none;
+    height:800px;
   }
 }
 @media (max-width: 767px) {

@@ -2,18 +2,43 @@
 <html lang="en" id="page-form-html">
 <head>
         <style>
-                @media only screen and (max-width: 768px){
+               .columnRight {
+                   width: 50%;
+               }
+               .columnLeft {
+                width: 50% !important;
+            }
+
+        @media only screen and (max-width: 768px){
         .script-container {
             height:500px !important;
         }}
+
+        @media only screen and (min-width: 992px){
+            .script-container {
+                margin-top:0px !important;
+            }}
                 </style>
     <!--Semantic UI start-->
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    
+    <!-- jQuery style hacks for form customization --> 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("input").css({
+                "background-color": "yellowgreen",
+                "font-weight": "bold"
+            });
+        });
+    </script>
+    
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"></script>
-    <script src="semantic/dist/semantic.min.js"></script>
+    <script src="semantic/dist/semantic.min.js">
+    
+    </script>
   <!--Semantic UI end-->
 <script src="semantic/dist/semantic.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -153,7 +178,7 @@
     "container": {
         "type":"table",
         "class": "container",
-        "style": "letter-spacing: 1px; width: 80%;line-height:32px;"
+        "style": "letter-spacing: 1px; width: 100%;line-height:32px;"
     },
     "row": {
         "type": "tr",
@@ -185,7 +210,7 @@
     },
     "input": {
         "class": "input",
-        "style": "padding: 5px 10px; border-radius: 2px; border: 1px solid #d8dee4;"
+        "style": "padding: 5px 10px; border-radius: 2px; border: 1px solid #d8dee4; width: 100%"
     },
     "textarea": {
         "class":"textarea", 
@@ -289,6 +314,12 @@
             console.log(response, messages)
             console.log('confirm')
         });
+        $(document).ready(function(){
+            $("input").addClass("noShow");
+            
+          
+        });
+
         </script><br>
         <div class="ui green message" id="message" style="visibility:hidden">Thank you very much, you are being redirected to the investors area.</div>
 </div>

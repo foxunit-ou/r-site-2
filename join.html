@@ -336,7 +336,7 @@
         function(response, messages){
             if(response.status ==200 || response.status ==201){
                 document.getElementById("message").style = "visibility: visible";
-                setTimeout(window.location.replace("https://rise.dashboard.securitize.io/registration"),7000);
+                setTimeout(window.location.replace("https://rise.dashboard.securitize.io/registration"),10000);
             }
         }, 
         function(response, messages){
@@ -354,7 +354,7 @@
         });
 
         </script><br>
-        <div class="ui green message" id="message" style="visibility:hidden">Thank you very much, you are being redirected to the investors area.</div>
+        <div class="ui green massive message" id="message" style="visibility:hidden; position: absolute;">Thank you very much, you are being redirected to the investors area.</div>
  </div>
 
 

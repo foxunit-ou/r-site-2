@@ -8,16 +8,22 @@
                .columnLeft {
                 width: 50% !important;
             }
-             #LgqtitRp_3 {
+            #uglbPtSW_3 {
                 margin:10px !important;
-                }
-                #cJFgQ84b_2{
-                    margin:10px!important;
-                }
+                padding:10px !important;
+            }
 
+            .required {
+                margin:10px;
+            }
+            #message {
+                height:40px;
+                font-size: 20px;
+                box-sizing: content-box;
+            }
               
             .input:hover {
-               box-shadow:  5px 10px 18px  silver;
+               box-shadow:  5px 10px 15px  silver;
             }
             div.partners {
                 padding-bottom:150px !important;
@@ -35,7 +41,7 @@
     <!--Semantic UI start-->
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
     
-    <!-- jQuery style hacks for form customization --> 
+    <!-- jQuery style hacks for form customization 
     <script type="text/javascript">
         $(document).ready(function(){
             $("input").css({
@@ -44,6 +50,7 @@
             });
         });
     </script>
+    --> 
     
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -166,12 +173,14 @@
         <div class="container"><div class="label br"></div></div>
         <div class="container"><div class="h5 br"></div></div>
         <div class="send"></div>
+        
 
         <header>
             <a href="index.html" class="logo"></a>
         </header>
         <div id="loader-anim" class="lds-roller"></div>
         
+
         <!-- Typeform inline widget begin -->
         <script id="n2g_script"> 
         !function(e,t,n,c,r,a,i)
@@ -215,7 +224,13 @@
         "type": "input",
         "class": "checkbox",
         "style": "margin:10px;"
+    }, 
+    "radio": {
+        "type": "input",
+        "class": "radio",
+        "style": "margin:10px;"
     },
+
     "separator": {
         "type": "br",
         "class": "br",
@@ -246,6 +261,11 @@
         "type": "label",
         "class": "label",
         "style": "padding-left: 5px"
+    },
+    "message":{
+        "class":"message",
+        "id":"message", 
+        "style":"position:absolute;"
     },
     "loader": {
         "type": "img",
@@ -316,7 +336,7 @@
         function(response, messages){
             if(response.status ==200 || response.status ==201){
                 document.getElementById("message").style = "visibility: visible";
-                setTimeout(window.location.replace("https://rise.dashboard.securitize.io/registration"),4000);
+                setTimeout(window.location.replace("https://rise.dashboard.securitize.io/registration"),7000);
             }
         }, 
         function(response, messages){
@@ -335,7 +355,7 @@
 
         </script><br>
         <div class="ui green message" id="message" style="visibility:hidden">Thank you very much, you are being redirected to the investors area.</div>
-</div>
+ </div>
 
 
     <div class="partners">

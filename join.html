@@ -109,6 +109,17 @@
         }
     }
 
+    @media not all and (min-resolution:.001dpcm) { 
+        @media {
+            #message { 
+                clear:both !important;
+                color:#0000FF; 
+                background-color:#CCCCCC; 
+                -webkit-transform: translateZ(0);
+            }
+        }
+    }
+
         @media only screen and (min-width: 992px){
             .script-container {
                 margin-top:0px !important;
@@ -413,14 +424,14 @@
         n2g('subscribe:createForm', config, 0, 
         function(response, messages){
             console.log("Newsletter2go status: ", response);
-            if(response.status ==200 || response.status ==201){
-                document.getElementById("message").style = "visibility: visible;position:absolute;";
+            if(response.status ==200 || response.status ==201){                
+                $( ".script-container:eq(1)" ).prepend( "<div class='ui green message'>Thank you very much, you are being redirected to the investors area.</div>" );
                 setTimeout(function(){window.location.replace("https://rise.dashboard.securitize.io/registration")},3500);
             }
         }, 
         function(response, messages){
             if(response.status ==400){
-                document.getElementById("tooManyTries").style = "visibility: visible;position:absolute;";
+                $( ".script-container:eq(1)" ).prepend( "<div class='ui yellow message' id='tooManyTries' >This email was signed up already, please check your Inbox or use a different Email.</div>" );
                 setTimeout(function(){document.getElementById("tooManyTries").style = "visibility: hidden ;position:absolute;"},3500);
             }
 
@@ -441,8 +452,8 @@
         });
 
         </script><br>
-        <div class="ui green message" id="message" style="visibility:hidden; position:absolute;">Thank you very much, you are being redirected to the investors area.</div>
-        <div class="ui yellow message" id="tooManyTries" style="visibility:hidden; position:absolute;">This email was signed up already, please check your Inbox or use a different Email.</div>
+        <!-- <div class="ui green message" id="message" style="visibility:hidden; position:fixed; z-index:10; ">Thank you very much, you are being redirected to the investors area.</div>
+        <div class="ui yellow message" id="tooManyTries" style="visibility:hidden; position:absolute;">This email was signed up already, please check your Inbox or use a different Email.</div> -->
 
 </div>
 

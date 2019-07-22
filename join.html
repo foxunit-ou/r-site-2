@@ -407,11 +407,14 @@
             console.log("Newsletter2go status: ", response);
             if(response.status ==200 || response.status ==201){
                 document.getElementById("message").style = "visibility: visible;position:absolute;";
-                setTimeout(window.location.replace("https://rise.dashboard.securitize.io/registration"),10000);
+                setTimeout(function(){window.location.replace("https://rise.dashboard.securitize.io/registration")},3500);
             }
         }, 
         function(response, messages){
-
+            if(response.status ==400){
+                document.getElementById("tooManyTries").style = "visibility: visible;position:absolute;";
+                setTimeout(function(){document.getElementById("tooManyTries").style = "visibility: hidden ;position:absolute;"},3500);
+            }
 
             console.log("Newsletter2go error:", response)
         }, 
@@ -431,7 +434,9 @@
 
         </script><br>
         <div class="ui green message" id="message" style="visibility:hidden; position:absolute;">Thank you very much, you are being redirected to the investors area.</div>
- </div>
+        <div class="ui yellow message" id="tooManyTries" style="visibility:hidden; position:absolute;">This email was signed up already, please check your Inbox or use a different Email.</div>
+
+</div>
 
 
     <div class="partners">

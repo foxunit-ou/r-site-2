@@ -404,14 +404,16 @@
         n2g('create', 'k886ho4j-kf4qtobn-1bzq');
         n2g('subscribe:createForm', config, 0, 
         function(response, messages){
+            console.log("Newsletter2go status: ", response);
             if(response.status ==200 || response.status ==201){
                 document.getElementById("message").style = "visibility: visible;position:absolute;";
                 setTimeout(window.location.replace("https://rise.dashboard.securitize.io/registration"),10000);
             }
         }, 
         function(response, messages){
-            console.log(response, messages)
-            console.log('error')
+
+
+            console.log("Newsletter2go error:", response)
         }, 
         function(response, messages){
             console.log(response, messages)
@@ -421,10 +423,10 @@
 
 
         $(document).ready(function(){
-            document.querySelector("#page-form > div.main-container > div.script-container > form > table > tr:nth-child(3) > td.columnRight").innerHTML("<p> Hello Wrld!</p>");
+            
 
             $("input").addClass("noShow");
-            $("#page-form > div.main-container > div.script-container > form > table > tr:nth-child(3) > td.columnRight").text("<p> Hello WOrld!</p>");
+            
         });
 
         </script><br>

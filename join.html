@@ -426,12 +426,14 @@
             console.log("Newsletter2go status: ", response);
             if(response.status ==200 || response.status ==201){                
                 $( ".script-container:eq(1)" ).prepend( "<div class='ui green message'>Thank you very much, you are being redirected to the investors area.</div>" );
+                $("html, body").animate({ scrollTop: 0 }, "slow");
                 setTimeout(function(){window.location.replace("https://rise.dashboard.securitize.io/registration")},3500);
             }
         }, 
         function(response, messages){
             if(response.status ==400){
                 $( ".script-container:eq(1)" ).prepend( "<div class='ui yellow message' id='tooManyTries' >This email was signed up already, please check your Inbox or use a different Email.</div>" );
+                $("html, body").animate({ scrollTop: 0 }, "slow");
                 setTimeout(function(){document.getElementById("tooManyTries").style = "visibility: hidden ;position:absolute;"},3500);
             }
 

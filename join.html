@@ -3,16 +3,42 @@
 <head>
         <style>
 
+           /* tr td {
+                padding: 20px 40px;
+                border: 1px solid black;
+                display: block;
+            } */
+
+            .required {
+                margin-left: 5px !important;
+            }
+
+            #page-form > div.main-container > div.script-container > form > table > tr:nth-child(3) > td.columnRight > span > label::after {
+                content: "I am a citizen or resident of the European Union";
+                padding-left: 3px;
+            } 
+
+            #page-form > div.main-container > div.script-container > form > table > tr:nth-child(4) > td.columnRight > span > input {
+                margin-left: 10px !important;
+            }
+
+            #page-form > div.main-container > div.script-container > form > table > tr:nth-child(3) > td.columnLeft > label {
+                visibility: hidden !important;
+                border: 1px solid black;
+            }
+
             .script-container{
                 align-items: flex-start !important;
             }
 
-               .columnRight {
-                   width: 50%;
-               }
-               .columnLeft {
-                width: 50% !important;
+            .columnRight {
+                width: 50%;
             }
+
+            .columnLeft {
+            width: 50% !important;
+            }
+
             #uglbPtSW_3 {
                 margin:10px !important;
                 padding:10px !important;
@@ -28,7 +54,8 @@
             }
               
             .input:hover {
-               box-shadow:  5px 10px 15px  silver;
+               
+               border: 1px solid rgb(238, 238, 238) !important;
             }
             div.partners {
                 padding-bottom:150px !important;
@@ -379,8 +406,14 @@
             console.log(response, messages)
             console.log('confirm')
         });
+
+
+
         $(document).ready(function(){
+            document.querySelector("#page-form > div.main-container > div.script-container > form > table > tr:nth-child(3) > td.columnRight").innerHTML("<p> Hello Wrld!</p>");
+
             $("input").addClass("noShow");
+            $("#page-form > div.main-container > div.script-container > form > table > tr:nth-child(3) > td.columnRight").text("<p> Hello WOrld!</p>");
         });
 
         </script><br>
